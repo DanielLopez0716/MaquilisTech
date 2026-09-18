@@ -1,0 +1,222 @@
+/* ==========================================================
+   MaquilisTech - Hoja de estilos común
+   Fuente: Manual Básico de Identidad de Marca (Fase 1)
+   Tipografías: Montserrat (títulos) + Arial (cuerpo)
+   ========================================================== */
+
+/* ---------- Variables de marca ---------- */
+:root {
+    --azul-marino: #12143A;
+    --rosa-coral: #E0637A;
+    --rojo-naranja: #E65A34;
+    --marron: #8C5A34;
+    --blanco: #FFFFFF;
+
+    /* Variantes de la paleta con contraste AA (WCAG 4.5:1) para texto y botones sobre fondo claro.
+       El coral original (#E0637A) queda para fondos oscuros, donde ya cumple (5.25:1). */
+    --coral-accesible: #C8455F;   /* 4.7:1 con blanco */
+    --naranja-accesible: #CF4220; /* 4.7:1 con blanco */
+}
+
+/* ---------- Base ---------- */
+body {
+    font-family: Arial, sans-serif;
+    color: var(--azul-marino);
+}
+
+h1, h2, h3, h4, h5, h6, .font-titles {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.font-subtitles {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/* Tagline: Montserrat Medium en mayúsculas */
+.tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* ---------- Utilidades de color ---------- */
+.bg-navy { background-color: var(--azul-marino) !important; }
+.bg-coral { background-color: var(--rosa-coral) !important; }
+.text-navy { color: var(--azul-marino) !important; }
+.text-coral { color: var(--coral-accesible) !important; }
+/* Sobre fondos oscuros se usa el coral original de la marca */
+.bg-navy .text-coral,
+.hero .text-coral,
+.navbar .text-coral,
+.site-footer .text-coral { color: var(--rosa-coral) !important; }
+.text-orange { color: var(--rojo-naranja) !important; }
+.text-brown { color: var(--marron) !important; }
+
+/* ---------- Botones ---------- */
+.btn-coral {
+    background-color: var(--coral-accesible);
+    border-color: var(--coral-accesible);
+    color: var(--blanco);
+    font-weight: 600;
+}
+
+.btn-coral:hover,
+.btn-coral:focus {
+    background-color: var(--naranja-accesible);
+    border-color: var(--naranja-accesible);
+    color: var(--blanco);
+}
+
+.btn-outline-custom {
+    border-color: var(--blanco);
+    color: var(--blanco);
+}
+
+.btn-outline-custom:hover,
+.btn-outline-custom:focus {
+    background-color: var(--blanco);
+    color: var(--azul-marino);
+}
+
+/* ---------- Navbar ---------- */
+/* Logotipos SVG con fondo transparente (ver scripts/make-logo.ps1).
+   Navbar: isotipo + nombre en texto. Footer: logotipo principal con tagline. */
+.navbar-brand img {
+    height: 48px; /* el manual pide mínimo 32 px de alto */
+    width: auto;
+}
+
+.footer-logo {
+    height: 150px;
+    width: auto;
+}
+
+.brand-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: .01em;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--rosa-coral);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    background-color: var(--azul-marino);
+    color: var(--blanco);
+}
+
+/* Hero con banner: el degradado izquierdo asegura la legibilidad del texto */
+.hero-banner {
+    background:
+        linear-gradient(90deg, rgba(9, 10, 41, .92) 0%, rgba(9, 10, 41, .6) 48%, rgba(9, 10, 41, 0) 100%),
+        url("../img/banner-principal.svg") center right / cover no-repeat,
+        var(--azul-marino);
+}
+
+.hero-banner-center {
+    background:
+        linear-gradient(rgba(9, 10, 41, .72), rgba(9, 10, 41, .72)),
+        url("../img/banner-principal.svg") center right / cover no-repeat,
+        var(--azul-marino);
+}
+
+/* ---------- Carrusel e imágenes ---------- */
+.carousel-item img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    left: 8%;
+    right: 8%;
+    bottom: 1.25rem;
+    padding: .75rem 1rem;
+    border-radius: .75rem;
+    background: rgba(9, 10, 41, .78);
+}
+
+.card-img-top {
+    aspect-ratio: 16 / 9;
+    height: auto; /* anula el atributo height del HTML, que solo sirve para reservar espacio */
+    object-fit: cover;
+}
+
+/* ---------- Cards ---------- */
+.card-brand {
+    border: 0;
+    border-top: 4px solid var(--rosa-coral);
+    box-shadow: 0 .25rem .75rem rgba(18, 20, 58, .1);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card-brand:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 .5rem 1.25rem rgba(18, 20, 58, .18);
+}
+
+.icon-brand {
+    color: var(--rosa-coral);
+    font-size: 2.5rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer a {
+    color: rgba(255, 255, 255, .7);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--rosa-coral);
+}
+
+.site-footer .social a {
+    font-size: 1.4rem;
+    margin-right: .75rem;
+}
+
+/* ---------- Servicios: proceso y galería ---------- */
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--rosa-coral);
+    color: var(--blanco);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* ---------- Utilidades de ancho y tamaño ---------- */
+/* Anchos máximos para columnas de lectura (sustituyen a style="max-width: ...") */
+.mw-720 { max-width: 720px; }
+.mw-760 { max-width: 760px; }
+.mw-780 { max-width: 780px; }
+.mw-800 { max-width: 800px; }
+.mw-860 { max-width: 860px; }
+.mw-900 { max-width: 900px; }
+
+/* Hero de la portada a gran altura */
+.hero-tall { min-height: min(70vh, 640px); } /* el tope evita hero enorme en pantallas muy altas */
+
+/* Contenedor del mapa de Google */
+.map-box { height: 260px; }
+.map-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
