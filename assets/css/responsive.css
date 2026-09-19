@@ -1,0 +1,92 @@
+/* Shared layout rules, loaded after Bootstrap and each page's styles. */
+main, .services-section, .site-footer {
+    overflow-wrap: anywhere;
+}
+
+.services-section .card-img-top {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        max-height: 65vh;
+        max-height: 65dvh;
+        overflow-y: auto;
+    }
+
+    .navbar-nav .nav-link, .navbar-toggler {
+        min-height: 44px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    /* Keep captions in the flow so larger text and landscape screens fit. */
+    #myCarousel .carousel-item > img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #myCarousel .carousel-caption {
+        position: relative;
+        inset: auto;
+        padding: 2.5rem 2rem 3.5rem;
+        text-align: center !important;
+        overflow-wrap: anywhere;
+    }
+
+    #myCarousel .carousel-caption h2 {
+        font-size: clamp(1.4rem, 4vw, 2rem);
+    }
+
+    #myCarousel .carousel-control-prev,
+    #myCarousel .carousel-control-next {
+        width: 44px;
+    }
+
+    .services-section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        margin-bottom: 2rem;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .services-section .btn, .footer-links a, .footer-social a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .footer-links a {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .footer-contact li {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 575.98px) {
+    main.container, main > section.container {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .form-control, .form-select {
+        font-size: 1rem;
+    }
+
+    .navbar-brand {
+        margin-right: .5rem;
+    }
+}

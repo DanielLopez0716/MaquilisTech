@@ -122,3 +122,63 @@ footer {
 .contactos_blanco{
     color: #FFFFFF;
 }
+/* Let the form and company information share space without floats. */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+main {
+    max-width: 1140px;
+    margin: auto;
+    padding: 0 16px;
+    overflow-wrap: anywhere;
+}
+
+.contenedor-1 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+}
+
+form, aside {
+    float: none;
+    width: 100%;
+}
+
+input, select, textarea {
+    min-width: 0;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+@media (max-width: 767.98px) {
+    .contenedor-1 {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px 16px;
+    }
+
+    nav h1 {
+        float: none;
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    nav li {
+        margin-left: 0;
+        color: white;
+    }
+
+    input, select, button {
+        min-height: 44px;
+    }
+}
