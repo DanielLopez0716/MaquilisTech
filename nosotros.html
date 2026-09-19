@@ -4,76 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros - MaquilisTech</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --azul-marino: #12143A; --rosa-coral: #E0637A; --blanco: #FFFFFF; }
-        body { font-family: 'Arial', sans-serif; color: var(--azul-marino); }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
-        .bg-navy { background-color: var(--azul-marino) !important; }
-        .text-coral { color: var(--rosa-coral) !important; }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <header class="sticky-top bg-navy shadow">
-        <nav class="navbar navbar-expand-lg navbar-dark container py-1">
-            <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="assets/icons/logo_maquilistech.png" alt="MaquilisTech" height="45" class="me-2">
-                    <span class="fs-4 fw-bold">Maquilis<span class="text-coral">Tech</span></span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto text-uppercase small font-titles">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="servicio.html">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main class="container py-5">
-        <section class="row align-items-center mb-5">
-            <div class="col-lg-12 text-center mb-4">
-                <h1 class="display-4">Nuestra Historia</h1>
-                <p class="text-muted">Inspirados por el Árbol Nacional de El Salvador</p>
-            </div>
-            <div class="col-lg-12">
-                <p class="lead text-center">Nacimos en 2026 bajo el nombre corporativo de <strong>Maquilishuat Intelligence, S.A.S.</strong>, observando que las empresas locales perdían tiempo valioso en flujos pesados y repetitivos. Al igual que el maquilishuat florece con fuerza y transforma el paisaje, creamos agentes de inteligencia artificial para que las organizaciones del país florezcan con competitividad a escala global.</p>
-            </div>
-        </section>
-        <section class="row g-4 mb-5 text-center">
-            <div class="col-md-6">
-                <div class="p-4 bg-light rounded h-100 shadow-sm">
-                    <h2 class="text-coral mb-3">🚀 Misión</h2>
-                    <p>Desarrollar e implementar soluciones basadas en agentes de inteligencia artificial que ayuden a las empresas salvadoreñas y de la región a optimizar sus procesos, reducir tiempos y costos, y mejorar su eficiencia operativa mediante tecnologías accesibles y adaptables.</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="p-4 bg-light rounded h-100 shadow-sm">
-                    <h2 class="text-coral mb-3">👁️ Visión</h2>
-                    <p>Ser una empresa referente en el desarrollo de soluciones de inteligencia artificial aplicadas a los negocios en El Salvador y Centroamérica para 2030, reconocida por la calidad técnica de sus servicios, la innovación y el impacto positivo medible en cada uno de sus clientes.</p>
-                </div>
-            </div>
-        </section>
-        <section class="py-4">
-            <h2 class="text-center mb-4">Equipo de Fundadores</h2>
-            <div class="row text-center g-3">
-                <div class="col-md-4"><div class="p-3 border rounded">Isaac Edgardo Galicia</div></div>
-                <div class="col-md-4"><div class="p-3 border rounded">Barnett Alejandro Morales</div></div>
-                <div class="col-md-4"><div class="p-3 border rounded">Josué Daniel López</div></div>
-                <div class="col-md-4"><div class="p-3 border rounded">Nelson Alexander Sandoval</div></div>
-                <div class="col-md-4"><div class="p-3 border rounded">Michael Esaú Jiménez</div></div>
-                <div class="col-md-4"><div class="p-3 border rounded">Josué Geremías González</div></div>
-            </div>
-        </section>
+    <div data-include="partials/header.html"></div>
+
+    <main>
+        <div data-include="partials/nosotros/historia.html"></div>
+        <div data-include="partials/nosotros/talento.html"></div>
+        <div data-include="partials/nosotros/significado.html"></div>
+        <div data-include="partials/nosotros/mision-vision.html"></div>
+        <div data-include="partials/nosotros/valores.html"></div>
+        <div data-include="partials/nosotros/objetivos.html"></div>
+        <div data-include="partials/nosotros/fundadores.html"></div>
     </main>
+
+    <div data-include="partials/footer.html"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/include.js"></script>
 </body>
 </html>
