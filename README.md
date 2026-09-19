@@ -127,7 +127,7 @@ Las variantes SVG son una **recreación** del logotipo original, con fondo trans
 | Servicios |Daniel lopez |
 | FAQ | |
 | Blog | |
-| Contacto | |
+| Contacto |Barnett Morales |
 
 ## Tecnologías
 
