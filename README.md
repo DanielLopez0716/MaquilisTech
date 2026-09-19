@@ -124,7 +124,7 @@ Las variantes SVG son una **recreación** del logotipo original, con fondo trans
 | Header y footer | isaac galicia |
 | Home | isaac galicia |
 | Nosotros | |
-| Servicios | |
+| Servicios |Daniel lopez |
 | FAQ | |
 | Blog | |
 | Contacto | |
