@@ -12,9 +12,7 @@ MaquilisTech (Maquilishuat Intelligence, S.A.S.) ofrece soluciones de agentes de
 | Integrante | Carnet |
 |---|---|
 | Barnett Alejandro Morales Flores | MF263365 |
-| Josué Geremías González Flores | GF263734 |
 | Isaac Edgardo Galicia | GH263224 |
-| Michael Esaú Jiménez Pérez | JP263169 |
 | Josué Daniel López Corado | LC263395 |
 | Nelson Alexander Sandoval Aguilar | SA262437 |
 
@@ -124,10 +122,10 @@ Las variantes SVG son una **recreación** del logotipo original, con fondo trans
 | Header y footer | isaac galicia |
 | Home | isaac galicia |
 | Nosotros | |
-| Servicios | |
+| Servicios | daniel lopez |
 | FAQ | |
 | Blog | |
-| Contacto | |
+| Contacto || Barnett Morales |
 
 ## Tecnologías
 
