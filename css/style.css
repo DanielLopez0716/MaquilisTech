@@ -132,40 +132,11 @@ h1, h2, h3, h4, h5, h6, .font-titles {
         var(--azul-marino);
 }
 
-/*------Oscurece la imagen del banner para que el texto blanco resalte -------*/
-#myCarousel1 .carousel-item1 {
-    position: relative;
-    overflow: hidden;
-}
-
-#myCarousel1 .carousel-item1::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    z-index: 1;
-    pointer-events: none; /* para que no bloquee clicks en botones */
-}
-
-.carousel-caption1 {
-    z-index: 2;
-}
-
-        @media (max-width: 768px) {
-            #myCarousel1 .carousel-item1 {
-                height: 60vh;
-                min-height: 260px;
-            }
-        }
-
 /* ---------- Carrusel e imágenes ---------- */
-/*.carousel-item img {
+.carousel-item img {
     aspect-ratio: 16 / 9;
     object-fit: cover;
-}*/
+}
 
 .carousel-caption {
     left: 8%;
@@ -198,90 +169,6 @@ h1, h2, h3, h4, h5, h6, .font-titles {
 .icon-brand {
     color: var(--rosa-coral);
     font-size: 2.5rem;
-}
-
-/* Todas las imágenes de las cards con el mismo alto, recortadas sin deformarse */
-.services-section .card-img-top {
-    height: 180px;
-    object-fit: cover;
-}
-
-/* Cards pequeñas sin imagen (Cursos y Aula virtual) */
-.services-section .card-compact {
-    width: 240px;          /* ancho fijo: ahora sí es más pequeña que las de arriba */
-    max-width: 100%;       /* en móviles muy angostos no se sale de la pantalla */
-}
-
-.services-section .card-compact .card-body {
-    padding: 0.9rem;
-}
-
-.services-section .card-compact .card-text {
-    font-size: 0.9rem;
-}
-
-/* estilo de seccion servicios */
-        .services-section1 {
-            padding: 60px 0;
-            background: var(--bg-light);
-        }
-
-        .section-title1 {
-            margin-bottom: 60px;
-            text-align: center;
-        }
-
-        .section-title1 h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .section-title1 p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: #666;
-        }
-
-/* ---------- Hover en las cards de servicios ---------- */
-.services-section .card {
-    overflow: hidden;                       /* la imagen no se sale de la card al hacer zoom */
-    border-top: 4px solid transparent;      /* reserva el espacio del borde para que no "salte" */
-    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-}
-
-.services-section .card:hover {
-    transform: translateY(-8px);                              /* la card sube */
-    border-top-color: var(--rosa-coral);                      /* aparece la línea de color arriba */
-    box-shadow: 0 .75rem 1.5rem rgba(18, 20, 58, .2) !important;  /* sombra más marcada */
-}
-
-/* Zoom suave de la imagen (solo las cards que tienen foto) */
-.services-section .card-img-top {
-    transition: transform .4s ease;
-}
-
-.services-section .card:hover .card-img-top {
-    transform: scale(1.08);
-}
-
-/* Botón: se rellena al pasar sobre la card */
-.services-section .card:hover .btn-outline-secondary {
-    background-color: var(--coral-accesible);
-    border-color: var(--coral-accesible);
-    color: var(--blanco);
-}
-
-/* Accesibilidad: sin animaciones si el usuario las tiene desactivadas */
-@media (prefers-reduced-motion: reduce) {
-    .services-section .card,
-    .services-section .card-img-top {
-        transition: none;
-    }
-    .services-section .card:hover,
-    .services-section .card:hover .card-img-top {
-        transform: none;
-    }
 }
 
 /* ---------- Footer ---------- */
@@ -333,7 +220,3 @@ h1, h2, h3, h4, h5, h6, .font-titles {
     height: 100%;
     border: 0;
 }
-
-
-
-
