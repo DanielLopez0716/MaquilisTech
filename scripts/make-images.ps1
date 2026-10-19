@@ -3,9 +3,10 @@
     Genera las ilustraciones SVG del sitio MaquilisTech (carpeta img/).
 
 .DESCRIPTION
-    Crea 8 imágenes vectoriales con la paleta de marca (#12143A, #E0637A, #E65A34):
+    Crea 10 imágenes vectoriales con la paleta de marca (#12143A, #E0637A, #E65A34):
     banner-principal, atencion-cliente, automatizacion, analisis-datos,
-    proceso-implementacion, blog-agente-ia, blog-automatizacion y blog-atencion-cliente.
+    proceso-implementacion, blog-agente-ia, blog-automatizacion, blog-atencion-cliente,
+    servicio-cursos y servicio-aula-virtual (estas dos, en 16:9, para las tarjetas de Servicios).
     Son deterministas: cada ejecución produce los mismos archivos.
 
 .USO
@@ -346,3 +347,109 @@ $(Lines 954 493 @(90, 60) .6 "#fff")
 </svg>
 "@
 Save "blog-atencion-cliente.svg" $s
+
+# ==========================================================
+# 9. SERVICIO: CURSOS Y ACTUALIZACIÓN (1200 x 675)
+#    Birrete central; tarjeta de curso, certificado, niveles y actualización.
+# ==========================================================
+$s = Defs 1200 675 .5 .5
+$s += Particles 1200 675 45 31
+$s += @"
+<circle cx="600" cy="335" r="250" fill="none" stroke="#fff" stroke-opacity=".07"/>
+<circle cx="600" cy="335" r="205" fill="none" stroke="#E0637A" stroke-opacity=".3" stroke-dasharray="4 10"/>
+<g fill="none" stroke="#E0637A" stroke-opacity=".7" stroke-width="2.2" filter="url(#glow)">
+<path d="M380 205 H420 L475 285"/><path d="M820 215 H780 L730 285"/><path d="M380 520 H440 L495 410"/><path d="M820 520 H760 L710 410"/>
+</g>
+<g fill="#12143A" stroke="#F59AB0" stroke-width="2.5"><circle cx="380" cy="205" r="5"/><circle cx="820" cy="215" r="5"/><circle cx="380" cy="520" r="5"/><circle cx="820" cy="520" r="5"/></g>
+<circle cx="600" cy="335" r="128" fill="#12143A" stroke="#E0637A" stroke-width="4" filter="url(#glow)"/>
+<path d="M520 345 V405 Q600 450 680 405 V345 L600 380 Z" fill="#1D2062" stroke="#F59AB0" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="600,250 745,315 600,380 455,315" fill="url(#coral)" filter="url(#glow)"/>
+<polygon points="600,250 745,315 600,380 455,315" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
+<path d="M728 323 V398" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+<circle cx="728" cy="410" r="11" fill="#E65A34" filter="url(#glow)"/>
+<rect x="80" y="120" width="300" height="170" rx="24" fill="#1D2062" stroke="#E0637A" stroke-opacity=".6" stroke-width="1.6"/>
+<rect x="100" y="140" width="260" height="92" rx="14" fill="#12143A"/>
+<circle cx="230" cy="186" r="25" fill="url(#coral)" filter="url(#glow)"/><polygon points="222,173 222,199 245,186" fill="#fff"/>
+$(Lines 100 248 @(180, 120) .6 "#fff")
+<rect x="820" y="120" width="300" height="170" rx="24" fill="#1D2062" stroke="#E0637A" stroke-opacity=".6" stroke-width="1.6"/>
+$(Lines 845 150 @(150, 110, 130) .65 "#fff")
+<polygon points="1034,252 1029,284 1050,271 1071,284 1066,252" fill="#E65A34"/>
+<circle cx="1050" cy="225" r="32" fill="url(#coral)" filter="url(#glow)"/>
+<path d="M1037 225 l9 10 l17 -20" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="110" y="490" width="62" height="50" rx="10" fill="url(#coral)" fill-opacity=".45"/>
+<rect x="187" y="455" width="62" height="85" rx="10" fill="url(#coral)" fill-opacity=".7"/>
+<rect x="264" y="420" width="62" height="120" rx="10" fill="url(#coral)"/>
+<line x1="90" y1="540" x2="350" y2="540" stroke="#fff" stroke-opacity=".2" stroke-width="2"/>
+<path d="M135 462 Q215 425 285 372" fill="none" stroke="#F59AB0" stroke-width="3.5" stroke-dasharray="3 11" stroke-linecap="round" filter="url(#glow)"/>
+<polygon points="300,362 276,364 288,386" fill="#F59AB0"/>
+<circle cx="965" cy="470" r="66" fill="none" stroke="#E0637A" stroke-opacity=".4" stroke-dasharray="3 7"/>
+<circle cx="965" cy="470" r="50" fill="#12143A" stroke="#E0637A" stroke-width="4" filter="url(#glow)"/>
+<path d="M943 470 A22 22 0 0 1 984 459" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+<polygon points="993,452 995,474 974,466" fill="#fff"/>
+<path d="M987 470 A22 22 0 0 1 946 481" fill="none" stroke="#F59AB0" stroke-width="5" stroke-linecap="round"/>
+<polygon points="937,488 935,466 956,474" fill="#F59AB0"/>
+</svg>
+"@
+Save "servicio-cursos.svg" $s
+
+# ==========================================================
+# 10. SERVICIO: AULA VIRTUAL (1200 x 675)
+#     Ventana de aula con módulos, video, participantes, evaluación y progreso.
+# ==========================================================
+$s = Defs 1200 675 .5 .45
+$s += Particles 1200 675 45 37
+$s += @"
+<g fill="none" stroke="#E0637A" stroke-opacity=".5" stroke-width="2"><path d="M40 330 H120 l30 -30 H230"/><path d="M1170 380 H1090 l-30 30 H970"/></g>
+<rect x="230" y="105" width="740" height="420" rx="24" fill="#12143A" stroke="#E0637A" stroke-opacity=".75" stroke-width="2.5" filter="url(#glow)"/>
+<path d="M230 129 a24 24 0 0 1 24 -24 H946 a24 24 0 0 1 24 24 V160 H230 Z" fill="#1D2062"/>
+<circle cx="262" cy="132" r="6" fill="#E0637A"/><circle cx="284" cy="132" r="6" fill="#F59AB0" fill-opacity=".7"/><circle cx="306" cy="132" r="6" fill="#fff" fill-opacity=".3"/>
+<rect x="350" y="120" width="400" height="24" rx="12" fill="#12143A"/>
+<rect x="250" y="180" width="190" height="325" rx="14" fill="#1D2062" fill-opacity=".6"/>
+
+"@
+for ($i = 0; $i -lt 4; $i++) {
+    $y = 196 + $i * 76
+    $stroke = if ($i -eq 1) { "stroke=`"#E0637A`" stroke-opacity=`".8`" stroke-width=`"2`"" } else { "stroke=`"#fff`" stroke-opacity=`".15`" stroke-width=`"1.6`"" }
+    $s += "<rect x=`"262`" y=`"$y`" width=`"166`" height=`"60`" rx=`"14`" fill=`"#12143A`" $stroke/>`n"
+    $cy = $y + 30
+    if ($i -eq 0) {
+        $s += "<circle cx=`"290`" cy=`"$cy`" r=`"13`" fill=`"url(#coral)`"/><path d=`"M283 $cy l5 5 l9 -11`" fill=`"none`" stroke=`"#fff`" stroke-width=`"3`" stroke-linecap=`"round`" stroke-linejoin=`"round`"/>`n"
+    } elseif ($i -eq 1) {
+        $s += "<circle cx=`"290`" cy=`"$cy`" r=`"13`" fill=`"none`" stroke=`"#E0637A`" stroke-width=`"3`"/><circle cx=`"290`" cy=`"$cy`" r=`"5`" fill=`"#F59AB0`"/>`n"
+    } else {
+        $s += "<circle cx=`"290`" cy=`"$cy`" r=`"13`" fill=`"none`" stroke=`"#fff`" stroke-opacity=`".3`" stroke-width=`"2.5`"/>`n"
+    }
+    $op = if ($i -le 1) { ".7" } else { ".35" }
+    $s += Lines 314 ($y + 19) @(80, 56) $op "#fff"
+}
+$s += @"
+<rect x="465" y="180" width="360" height="230" rx="16" fill="#1D2062" stroke="#E0637A" stroke-opacity=".5" stroke-width="1.6"/>
+<circle cx="645" cy="285" r="44" fill="url(#coral)" filter="url(#glow)"/><polygon points="632,264 632,306 668,285" fill="#fff"/>
+<rect x="485" y="384" width="320" height="8" rx="4" fill="#fff" fill-opacity=".18"/><rect x="485" y="384" width="205" height="8" rx="4" fill="url(#coral)"/><circle cx="690" cy="388" r="8" fill="#fff"/>
+<rect x="840" y="180" width="105" height="70" rx="12" fill="#1D2062"/><circle cx="892" cy="206" r="13" fill="#F59AB0"/><path d="M868 242 Q892 220 916 242 Z" fill="#F59AB0" fill-opacity=".7"/>
+<rect x="840" y="260" width="105" height="70" rx="12" fill="#1D2062"/><circle cx="892" cy="286" r="13" fill="url(#coral)"/><path d="M868 322 Q892 300 916 322 Z" fill="#E0637A" fill-opacity=".7"/>
+<rect x="840" y="340" width="105" height="70" rx="12" fill="#1D2062"/><circle cx="892" cy="366" r="13" fill="#fff" fill-opacity=".75"/><path d="M868 402 Q892 380 916 402 Z" fill="#fff" fill-opacity=".4"/>
+$(Lines 465 430 @(300, 220) .6 "#fff")
+<rect x="790" y="428" width="155" height="70" rx="18" fill="url(#coral)" filter="url(#glow)"/>
+<circle cx="822" cy="463" r="14" fill="#12143A" fill-opacity=".85"/><path d="M815 463 l5 5 l9 -11" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+$(Lines 848 450 @(76, 56) .55 "#12143A")
+<path d="M170 535 H1030 L1000 562 H200 Z" fill="#1D2062" stroke="#E0637A" stroke-opacity=".5" stroke-width="1.6"/>
+<rect x="540" y="535" width="120" height="9" rx="4.5" fill="#12143A" fill-opacity=".8"/>
+<rect x="50" y="165" width="150" height="86" rx="24" fill="#1D2062" stroke="#E0637A" stroke-opacity=".6" stroke-width="1.6"/>
+<circle cx="84" cy="208" r="17" fill="url(#coral)"/>
+$(Lines 110 196 @(70, 50) .65 "#fff")
+<rect x="70" y="282" width="130" height="62" rx="20" fill="url(#coral)" filter="url(#glow)"/>
+$(Lines 88 298 @(80, 50) .55 "#12143A")
+<rect x="50" y="420" width="170" height="100" rx="22" fill="#1D2062" stroke="#E0637A" stroke-opacity=".6" stroke-width="1.6"/>
+<circle cx="82" cy="448" r="8" fill="#E0637A"/><rect x="104" y="443" width="90" height="10" rx="5" fill="#fff" fill-opacity=".6"/>
+<circle cx="82" cy="474" r="8" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="2"/><rect x="104" y="469" width="70" height="10" rx="5" fill="#fff" fill-opacity=".35"/>
+<circle cx="82" cy="500" r="8" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="2"/><rect x="104" y="495" width="80" height="10" rx="5" fill="#fff" fill-opacity=".35"/>
+<polygon points="1040,215 1032,262 1060,248 1088,262 1080,215" fill="#E65A34"/>
+<circle cx="1060" cy="190" r="38" fill="url(#coral)" filter="url(#glow)"/>
+<path d="M1044 190 l12 14 l22 -26" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1060" cy="440" r="44" fill="none" stroke="#fff" stroke-opacity=".15" stroke-width="10"/>
+<circle cx="1060" cy="440" r="44" fill="none" stroke="url(#coral)" stroke-width="10" stroke-linecap="round" stroke-dasharray="207 276.5" transform="rotate(-90 1060 440)" filter="url(#glow)"/>
+<circle cx="1060" cy="440" r="6" fill="#F59AB0"/>
+</svg>
+"@
+Save "servicio-aula-virtual.svg" $s

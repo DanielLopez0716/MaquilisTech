@@ -38,6 +38,9 @@ y abrir <http://localhost:8080>.
 proyecto/
 ├── index.html · nosotros.html · servicios.html · faq.html · blog.html · contacto.html
 ├── articulo-*.html · privacidad.html     ← páginas internas
+├── servicio-*.html                       ← detalle de cada servicio (4 páginas)
+├── 404.html                              ← página de error (la sirve el hosting en rutas inexistentes)
+├── proximamente.html                     ← avance de «Cursos y actualización» y «Aula virtual»
 ├── css/style.css                         ← estilos comunes y variables de marca
 ├── js/
 │   ├── include.js                        ← carga las secciones de partials/
@@ -52,6 +55,7 @@ proyecto/
 └── partials/                             ← una carpeta por página, un archivo por sección
     ├── header.html · footer.html         ← compartidos por todo el sitio
     ├── index/ · nosotros/ · servicios/ · faq/ · blog/ · contacto/ · privacidad/
+    └── servicio-atencion/ · servicio-automatizacion/ · servicio-datos/ · servicio-consultoria/   ← encabezado, contenido y otros
 ```
 
 ### Cómo funcionan las secciones
@@ -70,7 +74,7 @@ Viven en `scripts/` y se ejecutan con PowerShell desde la carpeta del proyecto.
 
 | Script | Para qué sirve | Cómo ejecutarlo |
 |---|---|---|
-| `make-images.ps1` | Genera las 8 ilustraciones vectoriales de `img/` (banner, servicios y blog) con la paleta de marca. Es determinista: siempre produce los mismos archivos. | `powershell -ExecutionPolicy Bypass -File scripts\make-images.ps1` |
+| `make-images.ps1` | Genera las 10 ilustraciones vectoriales de `img/` (banner, servicios y blog) con la paleta de marca. Es determinista: siempre produce los mismos archivos. | `powershell -ExecutionPolicy Bypass -File scripts\make-images.ps1` |
 | `make-logo.ps1` | Genera las variantes del logotipo en `img/`: principal, sin tagline, isotipo, monocromática positiva y negativa, y favicon. Convierte las letras a trazos con Montserrat, por lo que no depende de fuentes instaladas. Requiere Internet la primera vez (descarga las fuentes). | `powershell -ExecutionPolicy Bypass -File scripts\make-logo.ps1` |
 | `optimize-images.ps1` | Toma las fotos de `img/originales/`, las reduce (sin agrandarlas) y las guarda como JPG de calidad 82 en `img/`. Lee WebP, JPG y PNG. Para sumar una foto, se añade una línea a su tabla `$mapa`. | `powershell -ExecutionPolicy Bypass -File scripts\optimize-images.ps1` |
 | `serve.ps1` | Levanta un servidor local en `http://localhost:8080` (parámetro `-Port` para cambiar el puerto). | `powershell -ExecutionPolicy Bypass -File scripts\serve.ps1` |
@@ -119,13 +123,13 @@ Las variantes SVG son una **recreación** del logotipo original, con fondo trans
 
 | Sección | Responsable |
 |---|---|
-| Header y footer | Isaac Galicia |
-| Home | Isaac Galicia |
+| Header y footer | isaac galicia |
+| Home | isaac galicia |
 | Nosotros | |
-| Servicios | Daniel Lopez |
+| Servicios | |
 | FAQ | |
 | Blog | |
-| Contacto | Barnett Morales |
+| Contacto | |
 
 ## Tecnologías
 

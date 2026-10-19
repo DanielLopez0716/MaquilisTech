@@ -16,6 +16,9 @@
        El coral original (#E0637A) queda para fondos oscuros, donde ya cumple (5.25:1). */
     --coral-accesible: #C8455F;   /* 4.7:1 con blanco */
     --naranja-accesible: #CF4220; /* 4.7:1 con blanco */
+
+    /* Tono suave del rosa coral (55 % sobre blanco): solo para remarcar contornos, nunca para texto */
+    --rosa-suave: #EEA9B6;
 }
 
 /* ---------- Base ---------- */
@@ -24,9 +27,23 @@ body {
     color: var(--azul-marino);
 }
 
-h1, h2, h3, h4, h5, h6, .font-titles {
+/* Todos los títulos usan Montserrat. Se incluyen las clases de Bootstrap que aplican
+   estilo de título (.display-*, .h1-.h6, .card-title) y las preguntas del acordeón. */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6,
+.card-title, .font-titles {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-weight: 700; /* .display-* de Bootstrap trae 300 y quedaba más delgado que el resto */
+}
+
+/* Bootstrap fija el color de tarjetas y acordeón en #212529; así sus títulos salían en un
+   gris distinto al azul marino del resto de los títulos del sitio. */
+.card { --bs-card-color: var(--azul-marino); }
+
+.accordion-button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
 .font-subtitles {
@@ -79,6 +96,20 @@ h1, h2, h3, h4, h5, h6, .font-titles {
 .btn-outline-custom:focus {
     background-color: var(--blanco);
     color: var(--azul-marino);
+}
+
+/* Botón con contorno azul marino para fondos claros (planes de servicio) */
+.btn-outline-navy {
+    border-color: var(--azul-marino);
+    color: var(--azul-marino);
+    font-weight: 600;
+}
+
+.btn-outline-navy:hover,
+.btn-outline-navy:focus {
+    background-color: var(--azul-marino);
+    border-color: var(--azul-marino);
+    color: var(--blanco);
 }
 
 /* ---------- Navbar ---------- */
@@ -186,6 +217,27 @@ h1, h2, h3, h4, h5, h6, .font-titles {
     margin-right: .75rem;
 }
 
+/* ---------- Acordeón (FAQ) ---------- */
+/* La pregunta abierta no lleva relleno: Bootstrap la pinta con un fondo celeste que está fuera de
+   la paleta, así que se deja en blanco con texto azul marino. El anillo de foco usa el rosa coral
+   y el cuadro abierto se remarca con un contorno en rosa suave (regla de abajo). */
+.accordion {
+    --bs-accordion-color: var(--azul-marino);
+    --bs-accordion-btn-color: var(--azul-marino);
+    --bs-accordion-active-bg: var(--blanco);
+    --bs-accordion-active-color: var(--azul-marino);
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2312143A'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-focus-border-color: var(--rosa-coral);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 .25rem rgba(224, 99, 122, .35);
+}
+
+/* Solo el cuadro de la pregunta abierta (no su respuesta) se remarca con un contorno en rosa suave,
+   sin relleno. Se usa outline y no box-shadow para no anular el anillo de foco del teclado. */
+.accordion-button:not(.collapsed) {
+    outline: 2px solid var(--rosa-suave);
+    outline-offset: -2px;
+}
+
 /* ---------- Servicios: proceso y galería ---------- */
 .step-number {
     display: inline-flex;
@@ -199,6 +251,89 @@ h1, h2, h3, h4, h5, h6, .font-titles {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.25rem;
+}
+
+/* Botón que despliega el detalle de cada paso: la flecha gira al abrirse */
+.step-toggle .bi { display: inline-block; transition: transform .2s ease; }
+.step-toggle[aria-expanded="true"] .bi { transform: rotate(180deg); }
+
+/* ---------- Servicios: planes y caso de éxito ---------- */
+/* El plan recomendado lleva borde rosa coral y una etiqueta centrada sobre el borde superior */
+.plan-destacado {
+    border: 2px solid var(--rosa-coral);
+    box-shadow: 0 .5rem 1.25rem rgba(18, 20, 58, .18);
+}
+
+.plan-badge {
+    position: absolute;
+    top: -.85rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.plan-precio {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 1.1;
+}
+
+.plan-unidad {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--bs-secondary-color);
+}
+
+/* La unidad ("pago único", "por mes") va siempre en su propia línea: así todas las tarjetas
+   quedan alineadas aunque el precio sea largo ("desde $4,500") */
+.plan-precio .plan-unidad:last-child { display: block; }
+
+.caso-metrica {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 1.1;
+    color: var(--coral-accesible);
+}
+
+/* ---------- Página «Próximamente» ---------- */
+/* Ícono que late sobre el banner: un halo rosa que se expande y se desvanece */
+.pulso-icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    background-color: var(--rosa-coral);
+    color: var(--azul-marino);
+    animation: pulso 2.2s ease-out infinite;
+}
+
+@keyframes pulso {
+    0%   { box-shadow: 0 0 0 0 rgba(224, 99, 122, .55); }
+    70%  { box-shadow: 0 0 0 22px rgba(224, 99, 122, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(224, 99, 122, 0); }
+}
+
+/* Barra de «preparando el lanzamiento» sobre fondo oscuro */
+.hero .progress {
+    height: .6rem;
+    background-color: rgba(255, 255, 255, .14);
+}
+
+/* Imágenes veladas: se aclaran un poco al pasar el cursor (o al tocar en el móvil) */
+.velado {
+    filter: blur(7px) brightness(.85);
+    transform: scale(1.06); /* oculta el borde difuso que deja el desenfoque */
+    transition: filter .5s ease;
+}
+
+.velado-caja:hover .velado { filter: blur(1.5px) brightness(1); }
+
+@media (prefers-reduced-motion: reduce) {
+    .pulso-icono { animation: none; }
+    .velado { transition: none; }
 }
 
 /* ---------- Utilidades de ancho y tamaño ---------- */

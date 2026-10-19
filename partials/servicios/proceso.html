@@ -2,33 +2,88 @@
     <div class="container">
         <div class="text-center mb-5">
             <h2 id="proceso-titulo">Proceso de implementación</h2>
-            <p class="text-muted">Una implementación gradual, por etapas.</p>
+            <p class="text-muted">Una implementación gradual, por etapas. Abre cada paso para conocer más.</p>
         </div>
-        <ol class="row list-unstyled g-4 text-center mb-0">
+        <ol id="proceso-pasos" class="row list-unstyled g-4 text-center align-items-start mb-0">
             <li class="col-6 col-md">
                 <span class="step-number">1</span>
                 <h3 class="h6 mt-3">Diagnóstico</h3>
-                <p class="small text-muted mb-0">Identificación de necesidades y procesos que requieren automatización.</p>
+                <p class="small text-muted mb-1">Identificación de necesidades y procesos que requieren automatización.</p>
+                <button class="btn btn-link btn-sm text-coral step-toggle fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#paso-1" aria-expanded="false" aria-controls="paso-1">
+                    Profundizar <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div id="paso-1" class="collapse text-start small text-muted" data-bs-parent="#proceso-pasos">
+                    <p class="mb-2">Conversamos con tu equipo para entender cómo trabajan hoy, qué tareas se repiten y dónde se pierde más tiempo.</p>
+                    <ul class="ps-3 mb-0">
+                        <li>Reunión inicial y revisión de tus procesos.</li>
+                        <li>Lista de oportunidades ordenadas por impacto.</li>
+                        <li>Recomendación de por dónde empezar.</li>
+                    </ul>
+                </div>
             </li>
             <li class="col-6 col-md">
                 <span class="step-number">2</span>
                 <h3 class="h6 mt-3">Configuración</h3>
-                <p class="small text-muted mb-0">Configuración personalizada de los agentes de IA.</p>
+                <p class="small text-muted mb-1">Configuración personalizada de los agentes de IA.</p>
+                <button class="btn btn-link btn-sm text-coral step-toggle fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#paso-2" aria-expanded="false" aria-controls="paso-2">
+                    Profundizar <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div id="paso-2" class="collapse text-start small text-muted" data-bs-parent="#proceso-pasos">
+                    <p class="mb-2">Adaptamos el agente a tu empresa: su información, su tono de comunicación y las reglas que debe respetar.</p>
+                    <ul class="ps-3 mb-0">
+                        <li>Carga de la información de tu negocio.</li>
+                        <li>Definición de lo que el agente puede y no puede hacer.</li>
+                        <li>Conexión con las herramientas que ya usas.</li>
+                    </ul>
+                </div>
             </li>
             <li class="col-6 col-md">
                 <span class="step-number">3</span>
                 <h3 class="h6 mt-3">Pruebas</h3>
-                <p class="small text-muted mb-0">Pruebas y validaciones antes de la implementación.</p>
+                <p class="small text-muted mb-1">Pruebas y validaciones antes de la implementación.</p>
+                <button class="btn btn-link btn-sm text-coral step-toggle fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#paso-3" aria-expanded="false" aria-controls="paso-3">
+                    Profundizar <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div id="paso-3" class="collapse text-start small text-muted" data-bs-parent="#proceso-pasos">
+                    <p class="mb-2">Antes de que llegue a tus clientes, el agente se prueba con casos reales para confirmar que responde bien.</p>
+                    <ul class="ps-3 mb-0">
+                        <li>Pruebas con preguntas y situaciones frecuentes.</li>
+                        <li>Ajustes según lo que observe tu equipo.</li>
+                        <li>Validación final antes del lanzamiento.</li>
+                    </ul>
+                </div>
             </li>
             <li class="col-6 col-md">
                 <span class="step-number">4</span>
                 <h3 class="h6 mt-3">Capacitación</h3>
-                <p class="small text-muted mb-0">Preparación del personal para utilizar y administrar la solución.</p>
+                <p class="small text-muted mb-1">Preparación del personal para utilizar y administrar la solución.</p>
+                <button class="btn btn-link btn-sm text-coral step-toggle fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#paso-4" aria-expanded="false" aria-controls="paso-4">
+                    Profundizar <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div id="paso-4" class="collapse text-start small text-muted" data-bs-parent="#proceso-pasos">
+                    <p class="mb-2">Tu personal aprende a usar y administrar la solución, para que no dependa de nosotros en el día a día.</p>
+                    <ul class="ps-3 mb-0">
+                        <li>Sesiones de capacitación por área.</li>
+                        <li>Materiales de apoyo en el aula virtual.</li>
+                        <li>Resolución de dudas durante el uso.</li>
+                    </ul>
+                </div>
             </li>
             <li class="col-12 col-md">
                 <span class="step-number">5</span>
                 <h3 class="h6 mt-3">Puesta en marcha</h3>
-                <p class="small text-muted mb-0">Puesta en marcha de manera gradual.</p>
+                <p class="small text-muted mb-1">Puesta en marcha de manera gradual.</p>
+                <button class="btn btn-link btn-sm text-coral step-toggle fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#paso-5" aria-expanded="false" aria-controls="paso-5">
+                    Profundizar <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div id="paso-5" class="collapse text-start small text-muted" data-bs-parent="#proceso-pasos">
+                    <p class="mb-2">Lanzamos por fases, empezando por un área o un canal, para cuidar la operación y aprender antes de ampliar.</p>
+                    <ul class="ps-3 mb-0">
+                        <li>Lanzamiento inicial acotado.</li>
+                        <li>Seguimiento de resultados las primeras semanas.</li>
+                        <li>Ampliación gradual y soporte posterior.</li>
+                    </ul>
+                </div>
             </li>
         </ol>
     </div>
